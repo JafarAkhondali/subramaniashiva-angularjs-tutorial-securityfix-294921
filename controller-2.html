@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS Tutorials - Controllers Example 2</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+		<script src="js/controllers-2.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="GrandparentController">
+				<p>Family name: {{ familyname }}</p>
+				<div ng-controller="ParentController">
+					<p>Parent's name: {{ name +  ' ' + familyname}}</p>
+					<div ng-controller="ChildController">
+						<p>Child's name: {{ name +  ' ' + familyname}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

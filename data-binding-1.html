@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS Tutorials - Data Binding Exampe 1</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app>
+			<input type='text' ng-model='message' ng-init="message = 'hello'">
+			<p>Welcome <b>{{ message }}</b></p>
+			<h4>Testing expressions in AngularJS</h4>
+			<p>Concatenating: <b>{{ message + ' ' + message}}</b></p>
+			<p>Comparing against the text hello: <b>{{ message === 'hello' }}</b></p>
+			<p>Sample Mathematical expression: <b>{{ 1 + 2 + 3 }}</b></p>
+			<h4>Using ng-bind instead of expressions</h4>
+			<p ng-bind='message'></p>
+			<h4>Using one time binding</h4>
+			<p>Comparing against text hello one time: <b><span ng-bind="::message === 'hello'">This will be replaced</span></b></p>
+		</div>
+	</body>
+</html>
