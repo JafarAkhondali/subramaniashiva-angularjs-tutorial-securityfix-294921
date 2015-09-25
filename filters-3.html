@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS Tutorials - Filters Example 3</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+		<script src="js/filters-3.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp" ng-controller="myController as main">
+			<input type="text" ng-model="letter" placeholder='Enter starting letter to filter' >
+			<p ng-repeat="people in main.people | startsWith:letter">{{ people.name }}</p>
+		</div>
+	</body>
+</html>
