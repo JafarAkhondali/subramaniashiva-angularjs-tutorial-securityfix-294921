@@ -1,0 +1,37 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.clear-left {
+	clear: left;
+}
+.clear-right {
+	clear: right;
+}
+.clear-both {
+	clear: both;
+}
+.main-view {
+	width: 80%;
+}
+.aside {
+	width: 20%;
+}
+.top {
+	border: 1px solid #eee;
+	border-radius: 2px;
+	padding: 10px;
+	width: 150px;
+	height: 100px;
+	background: #ccc;
+}
+.topForm {
+	clear: both;
+	margin-top: 20px;
+}

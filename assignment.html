@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS Tutorials - Directives Example 2</title>
+		<link rel='stylesheet' href='css/assignment.css' />
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+		<script src="js/assignment.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="mainController as main">
+				<div class="pull-left main-view">
+					<div ng-repeat="block in main.topBlocks">
+						<topblock>
+							<p>{{ block.name }}</p>
+							<p>{{ block.age }}</p>
+						</topblock>
+					</div>
+				</div>
+				<div class="pull-right aside">
+					<form novalidate ng-submit="main.addTopBlock(main.form.$valid)" class='topForm' name='main.form'>
+						<div><input type='text' placeholder='Enter your name' ng-model='main.name' name='username' ng-required="true"></div>
+						<span ng-show="main.form.username.$invalid && !form.username.$pristine">Username is required</span>
+						<div><input type='number' placeholder='Enter your age' ng-model='main.age'  ng-required="true" name='age'></div>
+						<span ng-show="main.form.age.$invalid && !form.age.$pristine">The value is not a valid integer!</span>
+						<div><button type='submit' value='Submit'>Submit</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
