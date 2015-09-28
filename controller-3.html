@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>AngularJS Tutorials - Controllers Example 3</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
-		<script src="js/controllers-3.js"></script>
-	</head>
-	<body>
-		<div ng-app="myApp">
-			<div ng-controller="FormController as main">
-				<form ng-submit="main.setDetails(name, age)">
-					<label>Please enter your name</label>
-					<input type="text" ng-model="name">
-					<label>Please enter your age</label>
-					<input type="text" ng-model="age">
-					<button type="submit">Submit</button>
-				</form>
-				<div>
-					<p>Your name is <b>{{ main.name }}</b></p>
-					<p>Your age is <b>{{ main.age }}</b></p>
-				</div>
-			</div>
-		</div>
-	</body>
+
+<head>
+    <title>AngularJS Tutorials - Controllers Example 3</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+    <script src="js/controllers-3.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="FormController as main">
+            <form ng-submit="main.setDetails(name, age)">
+                <label>Please enter your name</label>
+                <input type="text" ng-model="name">
+                <label>Please enter your age</label>
+                <input type="text" ng-model="age">
+                <button type="submit">Submit</button>
+            </form>
+            <div>
+                <p>Your name is <b>{{ main.name }}</b></p>
+                <p>Your age is <b>{{ main.age }}</b></p>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

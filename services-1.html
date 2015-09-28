@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>AngularJS Tutorials - Services Example 1</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
-		<script src="js/services-1.js"></script>
-	</head>
-	<body>
-		<div ng-app="myApp">
-			<div ng-controller="ListViewController as list">
-				<p ng-repeat="message in list.messages">{{ message.id }}: {{ message.text }}</p>
-			</div>
-			<div ng-controller="FormController as form">
-				<form ng-submit="form.addMessage(form.newMessage)">
-					<label>Please enter your message</label>
-					<input type="text" ng-model="form.newMessage">
-					<button type="submit">Submit</button>
-				</form>
-			</div>
-		</div>
-	</body>
+
+<head>
+    <title>AngularJS Tutorials - Services Example 1</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+    <script src="js/services-1.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="ListViewController as list">
+            <p ng-repeat="message in list.messages">{{ message.id }}: {{ message.text }}</p>
+        </div>
+        <div ng-controller="FormController as form">
+            <form ng-submit="form.addMessage(form.newMessage)">
+                <label>Please enter your message</label>
+                <input type="text" ng-model="form.newMessage">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>
