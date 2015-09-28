@@ -23,13 +23,28 @@ html, body {
 .aside {
 	width: 20%;
 }
-.top {
+.note {
 	border: 1px solid #eee;
 	border-radius: 2px;
 	padding: 10px;
 	width: 150px;
 	height: 100px;
-	background: #ccc;
+	background: #F8EB75;
+	color: #111;
+}
+.office, .personal {
+	min-height: 300px;
+}
+.personal {
+	position: relative;
+}
+.office .note {
+	float: left;
+}
+.personal .note {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 .topForm {
 	clear: both;
