@@ -32,7 +32,7 @@
             </div>
             <div class="pull-right aside">
                 <div class="office-form">
-                    <h3 class="heading">Add your office notes here</h3>
+                    <h3 class="heading">Add your office notes</h3>
                     <form novalidate ng-submit="main.addNotes('office', officeForm)" class='topForm' name='officeForm'>
                         <div>
                             <input type='text' placeholder='Enter your office tasks here' ng-model='main.officeTask' name='task' required>
@@ -51,12 +51,12 @@
                             <span  class="err-msg" ng-show="officeForm.priority.$error.required">Priority is required</span>
                         </div>
                         <div>
-                            <button type='submit' value='Submit'>Submit</button>
+                            <button type="submit" value="Submit" class="btn">Add Task</button>
                         </div>
                     </form>
                 </div>
                 <div class="personal-form">
-                    <h3 class="heading">Add your personal notes here</h3>
+                    <h3 class="heading">Add your personal notes</h3>
                     <form novalidate ng-submit="main.addNotes('personal', personalForm)" class='topForm' name='personalForm'>
                         <div>
                             <input type='text' placeholder='Enter your personal tasks here' ng-model='main.personalTask' name='task' required>
@@ -75,7 +75,7 @@
                             <span  class="err-msg" ng-show="personalForm.priority.$error.required">Priority is required</span>
                         </div>
                         <div>
-                            <button type='submit' value='Submit'>Submit</button>
+                            <button type="submit" value="Submit" class="btn">Add Task</button>
                         </div>
                     </form>
                 </div>

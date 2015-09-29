@@ -1,5 +1,7 @@
 'use strict';
+// Initialize app with no dependency
 var myApp = angular.module('myApp', []);
+// Create a service that add notes to a list from the given arguments
 myApp.factory('notes', function() {
     var notes = {};
     notes.officeNotes = [];
@@ -22,6 +24,7 @@ myApp.factory('notes', function() {
     }
     return notes;
 });
+// Main Controller which depends on the 'notes' service
 myApp.controller('mainController', function(notes) {
     var self = this;
     this.officeNotes = notes.officeNotes;
@@ -33,6 +36,7 @@ myApp.controller('mainController', function(notes) {
     this.personalTaskLength = 0;
     this.personalRow = 0;
     this.prioritiesList = ['High', 'Medium', 'Low'];
+    // Common function for adding notes
     this.addNotes = function(type, form) {
         if (form.$valid) {
             if (type === 'office') {
@@ -55,6 +59,7 @@ myApp.controller('mainController', function(notes) {
         }
     }
 });
+// Directive for adding sticknotes
 myApp.directive('sticknote', function() {
     return {
         restrict: 'E',
@@ -67,13 +72,5 @@ myApp.directive('sticknote', function() {
             row: '@'
         },
         template: '<div class="note" style="right: {{ 177 * (len-1) }}px; bottom: {{ 127*row }}px"><p>{{ task }}</p><p>{{ priority }}</p><ng-transclude></ng-transclude></div>'
-    }
-});
-
-myApp.directive('leaving', function() {
-    return function(scope, element, attrs) {
-        element.bind('mouseleave', function() {
-            element.removeClass(attrs.entering);
-        });
     }
 });
