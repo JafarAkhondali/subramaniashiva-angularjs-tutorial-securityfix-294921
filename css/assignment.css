@@ -2,6 +2,10 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: url(../img/bg_texture.png) repeat;
+}
 .pull-left {
 	float: left;
 }
@@ -19,9 +23,20 @@ html, body {
 }
 .main-view {
 	width: 80%;
+	border-right: 1px solid #eee;
+	box-sizing: border-box;
+	padding: 0 1%;
 }
 .aside {
-	width: 20%;
+	width: 18%;
+	padding: 0 1%;
+}
+.heading {
+	color: #fff;
+}
+.err-msg {
+	color: red;
+	font-size: 12px;
 }
 .note {
 	border: 1px solid #eee;
@@ -31,12 +46,19 @@ html, body {
 	height: 100px;
 	background: #F8EB75;
 	color: #111;
+	margin: 5px;
 }
 .office, .personal {
 	min-height: 300px;
+	border-bottom: 1px solid #eee;
 }
-.personal {
+.office-form, .personal-form {
+	min-height: 300px;
+	border-bottom: 1px solid #eee;
+}
+.personal-container {
 	position: relative;
+	min-height: 300px;
 }
 .office .note {
 	float: left;

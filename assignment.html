@@ -3,6 +3,7 @@
 
 <head>
     <title>AngularJS Tutorials - Stick Notes</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='css/assignment.css' />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
     <script src="js/assignment.js"></script>
@@ -13,66 +14,71 @@
         <div ng-controller="mainController as main">
             <div class="pull-left main-view">
                 <div class="office">
-                    <h3>Your Office Notes</h3>
+                    <h3 class="heading">Your Office Notes</h3>
                     <div ng-repeat="note in main.officeNotes">
                         <sticknote task='{{ note.task }}' priority='{{ note.priority }}' id='{{ note.id }}'>
                         </sticknote>
                     </div>
                 </div>
                 <div class="personal clear-both">
-                    <h3>Your Personal Notes</h3>
-                    <div ng-repeat="note in main.personalNotes">
-                        <sticknote task='{{ note.task }}' priority='{{ note.priority }}' id='{{ note.id }}' len='{{ note.length }}' row='{{note.row}}'>
-                        </sticknote>
+                    <h3 class="heading">Your Personal Notes</h3>
+                    <div  class="personal-container">
+                        <div ng-repeat="note in main.personalNotes">
+                            <sticknote task='{{ note.task }}' priority='{{ note.priority }}' id='{{ note.id }}' len='{{ note.length }}' row='{{note.row}}'>
+                            </sticknote>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="pull-right aside">
-                <h3>Add your office notes here</h3>
-                <form novalidate ng-submit="main.addNotes('office', officeForm)" class='topForm' name='officeForm'>
-                    <div>
-                        <input type='text' placeholder='Enter your office tasks here' ng-model='main.officeTask' name='task' required>
-                    </div>
-                    <div ng-show='officeForm.$submitted || officeForm.task.$touched'>
-                        <span ng-show="officeForm.task.$error.required">Task is required</span>
-                    </div>
-                    <div>
-                        <!--<input type='number' placeholder='Enter your priority' ng-model='main.priority'  name='priority' required=''>-->
-                        <select name="priority" ng-model="main.officePriority" required>
-                            <option value="" disabled selected>Select your priority</option>
-                            <option ng:repeat="priorValue in main.prioritiesList" value="{{priorValue}}">{{priorValue}}</option>
-                        </select>
-                    </div>
-                    <div ng-show='officeForm.$submitted || officeForm.priority.$touched'>
-                        <span ng-show="officeForm.priority.$error.required">Priority is required</span>
-                    </div>
-                    <div>
-                        <button type='submit' value='Submit'>Submit</button>
-                    </div>
-                </form>
-                <hr>
-                <h3>Add your personal notes here</h3>
-                <form novalidate ng-submit="main.addNotes('personal', personalForm)" class='topForm' name='personalForm'>
-                    <div>
-                        <input type='text' placeholder='Enter your personal tasks here' ng-model='main.personalTask' name='task' required>
-                    </div>
-                    <div ng-show='personalForm.$submitted || personalForm.task.$touched'>
-                        <span ng-show="personalForm.task.$error.required">Task is required</span>
-                    </div>
-                    <div>
-                        <!--<input type='number' placeholder='Enter your priority' ng-model='main.priority'  name='priority' required=''>-->
-                        <select name="priority" ng-model="main.personalPriority" required>
-                            <option value="" disabled selected>Select your priority</option>
-                            <option ng:repeat="priorValue in main.prioritiesList" value="{{priorValue}}">{{priorValue}}</option>
-                        </select>
-                    </div>
-                    <div ng-show='personalForm.$submitted || personalForm.priority.$touched'>
-                        <span ng-show="personalForm.priority.$error.required">Priority is required</span>
-                    </div>
-                    <div>
-                        <button type='submit' value='Submit'>Submit</button>
-                    </div>
-                </form>
+                <div class="office-form">
+                    <h3 class="heading">Add your office notes here</h3>
+                    <form novalidate ng-submit="main.addNotes('office', officeForm)" class='topForm' name='officeForm'>
+                        <div>
+                            <input type='text' placeholder='Enter your office tasks here' ng-model='main.officeTask' name='task' required>
+                        </div>
+                        <div ng-show='officeForm.$submitted || officeForm.task.$touched'>
+                            <span class="err-msg" ng-show="officeForm.task.$error.required">Task is required</span>
+                        </div>
+                        <div>
+                            <!--<input type='number' placeholder='Enter your priority' ng-model='main.priority'  name='priority' required=''>-->
+                            <select name="priority" ng-model="main.officePriority" required>
+                                <option value="" disabled selected>Select your priority</option>
+                                <option ng:repeat="priorValue in main.prioritiesList" value="{{priorValue}}">{{priorValue}}</option>
+                            </select>
+                        </div>
+                        <div ng-show='officeForm.$submitted || officeForm.priority.$touched'>
+                            <span  class="err-msg" ng-show="officeForm.priority.$error.required">Priority is required</span>
+                        </div>
+                        <div>
+                            <button type='submit' value='Submit'>Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="personal-form">
+                    <h3 class="heading">Add your personal notes here</h3>
+                    <form novalidate ng-submit="main.addNotes('personal', personalForm)" class='topForm' name='personalForm'>
+                        <div>
+                            <input type='text' placeholder='Enter your personal tasks here' ng-model='main.personalTask' name='task' required>
+                        </div>
+                        <div ng-show='personalForm.$submitted || personalForm.task.$touched'>
+                            <span  class="err-msg" ng-show="personalForm.task.$error.required">Task is required</span>
+                        </div>
+                        <div>
+                            <!--<input type='number' placeholder='Enter your priority' ng-model='main.priority'  name='priority' required=''>-->
+                            <select name="priority" ng-model="main.personalPriority" required>
+                                <option value="" disabled selected>Select your priority</option>
+                                <option ng:repeat="priorValue in main.prioritiesList" value="{{priorValue}}">{{priorValue}}</option>
+                            </select>
+                        </div>
+                        <div ng-show='personalForm.$submitted || personalForm.priority.$touched'>
+                            <span  class="err-msg" ng-show="personalForm.priority.$error.required">Priority is required</span>
+                        </div>
+                        <div>
+                            <button type='submit' value='Submit'>Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

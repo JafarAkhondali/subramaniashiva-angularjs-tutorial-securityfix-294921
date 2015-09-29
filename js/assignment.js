@@ -66,7 +66,7 @@ myApp.directive('sticknote', function() {
             len: '@',
             row: '@'
         },
-        template: '<div class="note" style="right: {{ 172 * (len-1) }}px; bottom: {{ 122*row }}px"><p>{{ task }}</p><p>{{ priority }}</p><ng-transclude></ng-transclude></div>'
+        template: '<div class="note" style="right: {{ 177 * (len-1) }}px; bottom: {{ 127*row }}px"><p>{{ task }}</p><p>{{ priority }}</p><ng-transclude></ng-transclude></div>'
     }
 });
 
